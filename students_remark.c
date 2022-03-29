@@ -31,6 +31,6 @@ void sample(){
 //	char ch=' ';
 //	char ch1=' ';
 	printf("FORMATE -> FIRST ROLL NUMBER FOLLOWED BY - THEN TYPE YOUR MESSEGE AT END CLOSE WITH | AT THE END OF REMARK CLOSE WITH @ \nEXAMPLE :1-IN ATTENTIV|2.TALKATTIVE@\n");
-scanf("%200s",chat);
+scanf("%100s",chat);
 cpy();
 }
