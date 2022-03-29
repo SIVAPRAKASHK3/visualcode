@@ -31,6 +31,6 @@ void sample(){
 	char ch=' ';
 	char ch1=' ';
 	printf("FORMATE -> FIRST ROLL NUMBER FOLLOWED BY - THEN TYPE YOUR MESSEGE AT END CLOSE WHITH |\nEXAMPLE :1-IN ATTENTIV|\n");
-scanf("%200s",chat);
+scanf("%20s",chat);
 cpy();
 }
