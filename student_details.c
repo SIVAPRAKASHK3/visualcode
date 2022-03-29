@@ -151,7 +151,7 @@ return ((float)arr[rollno-1]/number_of_working_days)*100;
 void login(){
 	 int itr;
      printf("Enter the 5 digit pin \n");
- 		scanf("%s",str);
+ 		scanf("%5s",str);
 	 if((strcmp(str,str1))==0)
        menu();
     else{
