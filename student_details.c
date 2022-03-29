@@ -190,7 +190,7 @@ void attendence_percentage()
     printf("\nDo you want to find others attendence percentage ? TYPE y/n ");
     scanf("%c",&ch1);
     scanf("%c",&ch);
-    if(ch=='y'||ch=='y')
+    if(ch=='y'||ch=='Y')
          attendence_percentage();
     else{
         printf("To Navigate menu TYPE ? y/n ");
