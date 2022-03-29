@@ -16,7 +16,7 @@ void remark(){
 			display();
 		        printf("Navigate to menu type ? y/n ");
 		        scanf("%c",&ch1);
-		        scanf("%c \n",&ch);
+		        scanf("%c",&ch);
 		        if(ch=='y')
 		            menu();
 		        else
@@ -28,9 +28,9 @@ void remark(){
 	}}
 
 void sample(){
-	//char ch=' ';
-	//char ch1=' ';
-	printf("FORMATE -> FIRST ROLL NUMBER FOLLOWED BY - THEN TYPE YOUR MESSEGE AT END CLOSE WHITH |\nEXAMPLE :1-IN ATTENTIV|\n");
-scanf("%20s",chat);
+//	char ch=' ';
+//	char ch1=' ';
+	printf("FORMATE -> FIRST ROLL NUMBER FOLLOWED BY - THEN TYPE YOUR MESSEGE AT END CLOSE WITH | AT THE END OF REMARK CLOSE WITH @ \nEXAMPLE :1-IN ATTENTIV|2.TALKATTIVE@\n");
+scanf("%200s",chat);
 cpy();
 }

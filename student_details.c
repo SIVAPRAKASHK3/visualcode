@@ -35,7 +35,7 @@ void regist(){
 
 void menu(){
 printf("\n");
-printf(" \t \t \t \t \t \t MAIN MENU  \n \n \t \t \t 1.add attendence \n \t \t \t  2.retrive total days present \n \t \t \t   3.percentage \n \t \t \t    4.check the attendence eligibility \n \t \t \t     5.Student's remarks \n \t \t \t ");
+printf(" \t \t \t \t \t \t MAIN MENU  \n \n \t \t \t 1.Add Attendence \n \t \t \t  2.Retrive Total Days Present \n \t \t \t   3.Attendence Percentage \n \t \t \t    4.Check The Attendence Eligibility \n \t \t \t     5.Student's Remarks \n \t \t \t ");
 int n;
 scanf("%d",&n);
 an();
@@ -64,10 +64,10 @@ void cpy(void){
 	char ch=' ';
 	char ch1=' ';
 	strcpy(chat_org,chat);
-	printf("Navigate to menu type ? y/n ");
+	printf("Navigate to menu TYPE ? y/n ");
     scanf("%c",&ch1);
     scanf("%c",&ch);
-    if(ch=='y')
+    if(ch=='y'||ch=='Y')
          menu();
     else{
             printf("Thank you");
@@ -75,14 +75,25 @@ void cpy(void){
 
 }
 void display(void){
-	printf("%s \n",chat_org);
+	int i,x;
+    x=*(&chat_org+1)-chat_org;
+	for(i=0;i<x;i++){
+		if(chat_org[i]=='|'){
+			printf("\n");
+		}
+		else if(chat_org[i]=='@')
+		break;
+		else
+		printf("%c",chat_org[i]);
+	}
+//	printf("%s \n",chat_org);
 }
 
 int add(){
     int x=0,i;
     char ch1=' ';
     char ch=' ';
-    printf("roll number starts from 1 end at 10 \nEnter the roll number \nafter entering the attendence To close Enter -1 \n");
+    printf("\t \t <---Roll number starts from 1 end at 10 -->\nEnter the roll number \nTo close Attendence type -1 \n");
     for( i=0;i<10;i++){
        scanf("%d",&x);
        if(x==-1){
@@ -95,18 +106,18 @@ int add(){
             }
        enter(x);
    }
-    printf("Do you want to enter data for another day type ? y/n ");
+    printf("Do you want to enter data for another day TYPE ? y/n ");
     number_of_working_days++;
         scanf("%c",&ch1);
         scanf("%c",&ch);
         printf("\n");
-    if(ch=='y')
+    if(ch=='y'||ch=='Y')
         add();
     else{
-        printf(" navigate to menu type ? y/n ");
-        scanf("%c",&ch1);
-        scanf("%c",&ch);
-            if(ch=='y')
+        printf("To navigate menu TYPE ? y/n ");
+       scanf("%c",&ch1);
+        scanf("\n%c",&ch);
+            if(ch=='y'||ch=='Y')
                 menu();
             else
                 printf("Thank you");
@@ -124,19 +135,19 @@ void retrive(){
     int roll_no;
     char ch=' ';
     char ch1=' ';
-    printf("enter the roll number \n");
+    printf("Enter the roll number--> ");
     scanf("%d",&roll_no);
-    printf("[ %s ]attended for %d out of %d number of working days",dup[roll_no-1],arr[roll_no-1],number_of_working_days);
-    printf("\nDo you want to search for other type y/n ");
+    printf("[ %s ] attended for %d out of %d number of working days",dup[roll_no-1],arr[roll_no-1],number_of_working_days);
+    printf("\nDo you want to search for otherS? TYPE y/n ");
     scanf("%c",&ch1);
     scanf("%c",&ch);
-    if(ch=='y')
+    if(ch=='y'||ch=='Y')
          retrive();
     else{
-        printf("Navigate to menu type ? y/n ");
+        printf("To Navigate menu TYPE ? y/n ");
         scanf("%c",&ch1);
         scanf("%c",&ch);
-        if(ch=='y')
+        if(ch=='y'||ch=='Y')
             menu();
         else
             printf("Thank you");
@@ -149,7 +160,7 @@ return ((float)arr[rollno-1]/number_of_working_days)*100;
 
 
 void login(){
-	// int itr;
+	 //int itr;
      printf("Enter the 5 digit pin \n");
  		scanf("%5s",str);
 	 if((strcmp(str,str1))==0)
@@ -160,7 +171,7 @@ void login(){
     		break;
     	else
     		{	
-        printf("pin is wrong try once again \n");
+        printf("Pin is WRONG try once again \n");
         printf("\t \t \t \t \t<-- REMAINING CHANCE %d TIMES.... -->\n",cont);
          cont--;
 		login();}}
@@ -170,22 +181,22 @@ void login(){
 void attendence_percentage()
 {
     int rollno,cal;
-    printf("Enter roll no ");
+    printf("Enter roll no--> ");
     scanf("%d",&rollno);
     cal=attendence_cal(rollno);
-    printf("attendence percentage of [ %s ] is %d",dup[rollno-1],cal);
+    printf("Attendence percentage of [ %s ] is %d",dup[rollno-1],cal);
     char ch=' ';
     char ch1=' ';
-    printf("\nDo you want to find others attendence percentage y/n ");
+    printf("\nDo you want to find others attendence percentage ? TYPE y/n ");
     scanf("%c",&ch1);
     scanf("%c",&ch);
-    if(ch=='y')
+    if(ch=='y'||ch=='y')
          attendence_percentage();
     else{
-        printf("Navigate to menu type ? y/n ");
+        printf("To Navigate menu TYPE ? y/n ");
         scanf("%c",&ch1);
         scanf("%c",&ch);
-        if(ch=='y')
+        if(ch=='y'||ch=='Y')
             menu();
         else
             printf("Thank you");
@@ -194,24 +205,24 @@ void attendence_percentage()
 void attendence_eligibility(){
     int roll;
     char ch1,ch;
-    printf("Enter the roll number \n");
+    printf("Enter the roll number-->  ");
     scanf("%d",&roll);
     if(attendence_cal(roll)>75){
         printf("[ %s ] is Eligible for exam",dup[roll-1]);
     }
     else
-        printf("[ %s ]Not Eligible for exam percentage is bellow 75",dup[roll-1]);
+        printf("[ %s ] Not Eligible for exam percentage is bellow 75",dup[roll-1]);
     
         printf("\nDo you want to check for one more... if yes type y else n or anykey  y/n ");
     scanf("%c",&ch1);
     scanf("%c",&ch);
-    if(ch=='y')
+    if(ch=='y'||ch=='Y')
         attendence_eligibility();
     else{
-        printf("Navigate to menu type ? y/n ");
+        printf("To Navigate menu TYPE ? y/n ");
         scanf("%c",&ch1);
         scanf("%c",&ch);
-        if(ch=='y')
+        if(ch=='y'||ch=='Y')
             menu();
         else
             printf("Thank you");
